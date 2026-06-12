@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TecPro design s.r.o. — Butikový inženýring energetické infrastruktury</title>
-<meta name="description" content="TecPro design s.r.o. — butikový inženýring energetické infrastruktury. Přeložky VN/NN, věcná břemena, grid-connection pro FVE a BESS, zajištění kapacit VN. Vše pod razítkem autorizovaného inženýra.">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<!-- Náhled při sdílení odkazu (WhatsApp, sociální sítě) -->
+<title>TecPro design s.r.o. — Boutique engineering of energy infrastructure</title>
+<meta name="description" content="TecPro design s.r.o. — boutique engineering of energy infrastructure. MV/LV line relocations, easements, grid connection for PV and BESS, securing MV capacity. All under the stamp of an authorised engineer.">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tcpr.cz/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="https://tcpr.cz/favicon-64.png">
+<link rel="icon" type="image/svg+xml" href="https://tcpr.cz/favicon.svg">
+<link rel="apple-touch-icon" href="https://tcpr.cz/apple-touch-icon.png">
+<!-- Link share preview (WhatsApp, social networks) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="TecPro design s.r.o. — Butikový inženýring energetické infrastruktury">
-<meta property="og:description" content="Odstraňujeme technické a legislativní překážky v energetice. Přeložky VN/NN, grid-connection pro FVE a BESS, zajištění kapacit VN.">
-<meta property="og:url" content="https://tcpr.cz/">
+<meta property="og:title" content="TecPro design s.r.o. — Boutique engineering of energy infrastructure">
+<meta property="og:description" content="We remove technical and regulatory barriers in the energy sector. MV/LV line relocations, grid connection for PV and BESS, securing MV capacity.">
+<meta property="og:url" content="https://tcpr.cz/en/">
 <meta property="og:image" content="https://tcpr.cz/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="1200">
@@ -22,23 +22,15 @@
 <link rel="alternate" hreflang="cs" href="https://tcpr.cz/">
 <link rel="alternate" hreflang="en" href="https://tcpr.cz/en/">
 
-<!-- ================================================================
-     JAK EDITOVAT (pro Tomáše):
-     - Text měníte jen MEZI značkami <...> a </...>.
-     - Barvy a písmo: nahoře v :root.
-     - Čísla v počítadlech: hledej data-target="..." a přepiš číslo.
-     - Logo: viz komentář "LOGO".
-================================================================= -->
-
 <style>
   :root{
-    --bg:#0a0a0b;          /* hlavní pozadí (čistá černá jako vizitka) */
+    --bg:#0a0a0b;
     --bg-2:#0e0e10;
     --panel:#141416;
-    --ink:#f2f3f5;          /* hlavní světlý text (bílá jako logo) */
-    --muted:#9a9ea6;        /* tlumený text */
+    --ink:#f2f3f5;
+    --muted:#9a9ea6;
     --line:rgba(255,255,255,.08);
-    --accent:#e02626;       /* akcent — červená (změň zde celý web) */
+    --accent:#e02626;
     --accent-soft:rgba(224,38,38,.14);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -48,10 +40,9 @@
   .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
   h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.1}
 
-  /* HLAVIČKA */
+  /* HEADER */
   header{position:sticky;top:0;z-index:60;background:rgba(11,13,16,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-  /* LOGO: textové. Obrázek: <img src="logo.svg" alt="TecPro design" style="height:30px"> */
   .logo{font-size:19px;font-weight:600;letter-spacing:.04em;display:inline-flex;align-items:baseline;gap:5px}
   .logo b{font-weight:600}
   .logo .sub{font-size:12px;font-weight:400;letter-spacing:.18em;color:var(--muted);text-transform:lowercase}
@@ -73,7 +64,6 @@
   /* HERO */
   .hero{padding:130px 0 110px;position:relative;overflow:hidden}
   .hero:before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,var(--accent-soft),transparent 65%);pointer-events:none;z-index:1}
-  /* Blueprint mřížka na pozadí hero — technická: jemné linky + výraznější každá 5. (jako CAD) */
   .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
     background-image:
       linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),
@@ -84,7 +74,6 @@
     -webkit-mask-image:radial-gradient(ellipse 78% 68% at 50% 34%,#000 32%,transparent 80%);
     mask-image:radial-gradient(ellipse 78% 68% at 50% 34%,#000 32%,transparent 80%)}
   .hero .wrap{position:relative;z-index:2}
-  /* Elektrický puls — linka přes celou šířku se světelným bodem */
   .pulse-line{position:absolute;left:0;bottom:54px;width:100%;height:1px;z-index:2;overflow:visible;pointer-events:none;
     background:linear-gradient(90deg,transparent,rgba(224,38,38,.22) 30%,rgba(224,38,38,.22) 70%,transparent)}
   .pulse-line::after{content:"";position:absolute;top:50%;left:0;width:130px;height:2px;
@@ -95,11 +84,9 @@
     0%{transform:translate(-130px,-50%);opacity:0}
     6%{opacity:1}
     100%{transform:translate(calc(100vw - 150px),-50%);opacity:1}}
-  /* Pohyblivé ambientní podbarvení — reaguje na scrollování (JS) */
   .ambient{position:fixed;left:50%;top:30%;width:1100px;height:780px;z-index:-1;pointer-events:none;
     transform:translate(-50%,-50%);will-change:transform;
     background:radial-gradient(ellipse at center,rgba(224,38,38,.13),transparent 62%);filter:blur(8px)}
-  /* Scroll-reveal — sekce jemně naběhnou */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){
@@ -108,16 +95,16 @@
   }
   .tagline{display:inline-flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:30px}
   .tagline .pip{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-  .hero h1{font-size:clamp(40px,6vw,76px);font-weight:600;max-width:14ch;margin-bottom:28px}
+  .hero h1{font-size:clamp(40px,6vw,76px);font-weight:600;max-width:16ch;margin-bottom:28px}
   .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero .lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:54ch;margin-bottom:40px}
+  .hero .lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:56ch;margin-bottom:40px}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:15px 28px;border-radius:100px;font-weight:600;font-size:15px;transition:transform .15s,filter .2s}
   .btn:hover{filter:brightness(1.06);transform:translateY(-2px)}
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
   .btn-ghost:hover{border-color:var(--accent)}
 
-  /* POČÍTADLA */
+  /* COUNTERS */
   .counters{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
   .counters .grid{display:grid;grid-template-columns:repeat(4,1fr)}
   .counter{padding:58px 28px;border-right:1px solid var(--line)}
@@ -127,13 +114,13 @@
   .counter .lbl{font-size:14px;color:var(--muted);margin-top:6px}
   @media(max-width:820px){.counters .grid{grid-template-columns:1fr 1fr}.counter:nth-child(2){border-right:none}.counter{border-bottom:1px solid var(--line)}}
 
-  /* OBECNÁ SEKCE */
+  /* GENERIC SECTION */
   section.block{padding:150px 0}
   .kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
   .sec-title{font-size:clamp(30px,4vw,46px);font-weight:600;max-width:18ch;margin-bottom:20px}
   .sec-lead{color:var(--muted);font-size:18px;max-width:56ch}
 
-  /* SPECIALIZACE */
+  /* EXPERTISE */
   .spec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
   .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
   .spec{background:var(--bg);padding:38px 32px;transition:background .25s}
@@ -145,7 +132,7 @@
   .spec p{color:var(--muted);font-size:15px}
   @media(max-width:880px){.spec-grid{grid-template-columns:1fr}}
 
-  /* O FIRMĚ / MANIFEST */
+  /* MANIFEST */
   .manifest{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .manifest .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   .manifest h2{font-size:clamp(26px,3vw,38px);font-weight:600;margin-bottom:22px}
@@ -155,7 +142,7 @@
   .vlist svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2;flex-shrink:0;margin-top:3px}
   @media(max-width:880px){.manifest .wrap{grid-template-columns:1fr;gap:36px}}
 
-  /* PROCES */
+  /* PROCESS */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
   .pstep{position:relative;padding-top:28px;border-top:2px solid var(--line)}
   .pstep.active{border-top-color:var(--accent)}
@@ -164,7 +151,7 @@
   .pstep p{color:var(--muted);font-size:15px}
   @media(max-width:880px){.steps{grid-template-columns:1fr}}
 
-  /* FAQ — rozklikávací akordeon */
+  /* FAQ */
   .faq-list{max-width:920px;margin:56px auto 0;border-top:1px solid var(--line)}
   .faq-item{border-bottom:1px solid var(--line)}
   .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
@@ -179,25 +166,23 @@
   .faq-a{overflow:hidden;max-height:0;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
   .faq-a-inner{padding:0 4px 28px;color:var(--muted);font-size:16px;max-width:80ch}
 
-  /* KONTAKT */
+  /* CONTACT */
   .contact .wrap{background:linear-gradient(160deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:24px;padding:64px 56px;text-align:center;position:relative;overflow:hidden}
   .contact .wrap:before{content:"";position:absolute;bottom:-160px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,var(--accent-soft),transparent 65%)}
   .contact .avatar{width:136px;height:136px;border-radius:50%;object-fit:cover;object-position:50% 28%;border:2px solid rgba(224,38,38,.35);box-shadow:0 0 0 7px rgba(224,38,38,.07);display:block;margin:0 auto 28px;position:relative;background:#1a1a1c}
-  .contact .avatar.mono{filter:grayscale(100%) contrast(1.04)}  /* monochrom: nech třídu "mono"; barevně ji smaž */
   .contact h2{font-size:clamp(28px,4vw,44px);font-weight:600;margin-bottom:16px;position:relative}
   .contact p{color:var(--muted);font-size:18px;max-width:48ch;margin:0 auto 32px;position:relative}
   .cdetails{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-top:40px;position:relative}
   .cdetails .it{text-align:left}
   .cdetails .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
   .cdetails .v{font-size:17px;color:var(--ink)}
-  /* Mobil: kontakty na střed + užší okraje karty */
   @media(max-width:600px){
     .cdetails{gap:24px}
     .cdetails .it{text-align:center;width:100%}
     .contact .wrap{padding:48px 24px}
   }
 
-  /* PATIČKA */
+  /* FOOTER */
   footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
   .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 </style>
@@ -205,22 +190,22 @@
 <body>
 <div class="ambient" aria-hidden="true"></div>
 
-<!-- HLAVIČKA -->
+<!-- HEADER -->
 <header>
   <div class="wrap nav">
     <div class="nav-left">
-      <a href="#" aria-label="TecPro design"><img src="logo-white.png" alt="TecPro design" style="height:26px;display:block"></a>
-      <div class="lang"><span class="on">CZ</span><span class="sep">/</span><a href="en/index.html" hreflang="en">EN</a></div>
+      <a href="#" aria-label="TecPro design"><img src="https://tcpr.cz/logo-white.png" alt="TecPro design" style="height:26px;display:block"></a>
+      <div class="lang"><a href="../index.html" hreflang="cs">CZ</a><span class="sep">/</span><span class="on">EN</span></div>
     </div>
     <div class="nav-right">
       <nav class="menu">
-        <a href="#specializace">Expertíza</a>
-        <a href="#ofirme">Proč s námi</a>
-        <a href="#proces">Spolupráce</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#why">Why us</a>
+        <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="#kontakt" class="nav-cta">Nezávazná poptávka</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
     </div>
   </div>
 </header>
@@ -228,103 +213,103 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <span class="tagline"><span class="pip"></span> Butikový inženýring energetické infrastruktury</span>
-    <h1>Odstraňujeme <em>technické a legislativní překážky</em> v energetice.</h1>
-    <p class="lead">Strategický inženýring pro vaše klíčové stavby a investice. Řešíme náročné přeložky VN/NN u liniových staveb a zajišťujeme grid-connection velkokapacitních zdrojů — fotovoltaických elektráren i bateriových úložišť (BESS). Váš investiční záměr dovedeme až k pravomocnému povolení, bez zbytečných zdržení a pod razítkem autorizovaného inženýra.</p>
+    <span class="tagline"><span class="pip"></span> Boutique engineering of energy infrastructure</span>
+    <h1>We remove <em>technical and regulatory barriers</em> in the energy sector.</h1>
+    <p class="lead">Strategic engineering for your key construction projects and investments. We handle demanding MV/LV (VN/NN) line relocations for linear structures and secure grid connection for large-capacity sources — photovoltaic power plants and battery energy storage systems (BESS). We take your investment project all the way to a legally valid permit — without unnecessary delays and under the stamp of an authorised engineer.</p>
     <div class="hero-actions">
-      <a href="#kontakt" class="btn">Poptat řešení →</a>
-      <a href="#specializace" class="btn btn-ghost">Naše expertíza</a>
+      <a href="#contact" class="btn">Request a solution →</a>
+      <a href="#expertise" class="btn btn-ghost">Our expertise</a>
     </div>
   </div>
   <div class="pulse-line" aria-hidden="true"></div>
 </section>
 
-<!-- POČÍTADLA — DOPLŇ REÁLNÁ ČÍSLA do data-target="..." -->
+<!-- COUNTERS -->
 <div class="counters">
   <div class="wrap" style="padding:0">
     <div class="grid">
-      <div class="counter"><div class="num"><span data-target="1000">0</span><span class="suf">+</span></div><div class="lbl">povolených staveb</div></div>
-      <div class="counter"><div class="num"><span data-target="6500">0</span><span class="suf">+</span></div><div class="lbl">zajištěných věcných břemen</div></div>
-      <div class="counter"><div class="num"><span data-target="100">0</span><span class="suf">%</span></div><div class="lbl">kompatibilita s distributory</div></div>
-      <div class="counter"><div class="num"><span data-target="8">0</span><span class="suf">let</span></div><div class="lbl">praxe (2018–2026)</div></div>
+      <div class="counter"><div class="num"><span data-target="1000">0</span><span class="suf">+</span></div><div class="lbl">permitted projects</div></div>
+      <div class="counter"><div class="num"><span data-target="6500">0</span><span class="suf">+</span></div><div class="lbl">easements secured</div></div>
+      <div class="counter"><div class="num"><span data-target="100">0</span><span class="suf">%</span></div><div class="lbl">compatibility with distributors</div></div>
+      <div class="counter"><div class="num"><span data-target="8">0</span><span class="suf">yrs</span></div><div class="lbl">of practice (2018–2026)</div></div>
     </div>
   </div>
 </div>
 
-<!-- SPECIALIZACE -->
-<section class="block" id="specializace">
+<!-- EXPERTISE -->
+<section class="block" id="expertise">
   <div class="wrap">
     <div class="spec-head">
       <div>
-        <div class="kicker">Tři pilíře naší expertízy</div>
-        <h2 class="sec-title">Řešíme překážky, které brzdí vaše investice</h2>
+        <div class="kicker">Three pillars of our expertise</div>
+        <h2 class="sec-title">We remove the barriers that hold back your investments</h2>
       </div>
-      <p class="sec-lead">Naše činnost nekončí u projektové dokumentace. Přebíráme jednání s distributorem, vlastníky pozemků i dotčenými orgány a vedeme je až k pravomocnému povolení.</p>
+      <p class="sec-lead">Our work doesn't end with the project documentation. We take over negotiations with the distributor, landowners and the relevant authorities and drive them through to a legally valid permit.</p>
     </div>
     <div class="spec-grid">
       <div class="spec">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
-        <p class="spec-tag">Pro developery FVE a BESS</p>
-        <h3>Grid-connection a schvalování</h3>
-        <p>Připojení velkokapacitního zdroje nebo bateriového úložiště se u distributora zpravidla zdržuje. Provedeme vás celým procesem — od studie připojitelnosti přes nastavení komunikace RTU s dispečinkem až po pravomocné získání UPOS (umožnění provozu pro ověření souladu) a UTP (umožnění trvalého provozu) pro systémy nad 100 kW. Vše v součinnosti s ČEZ Distribuce, EG.D nebo PRE.</p>
+        <p class="spec-tag">For PV and BESS developers</p>
+        <h3>Grid connection &amp; approvals</h3>
+        <p>Connecting a large-capacity source or battery storage system to the grid typically gets delayed at the distributor. We guide you through the entire process — from the connectability study and RTU communication setup with the dispatch centre, to obtaining the final UPOS (trial operation for compliance verification) and UTP (permit for permanent operation) for systems above 100 kW. All in coordination with ČEZ Distribuce, EG.D or PRE.</p>
       </div>
       <div class="spec">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
-        <p class="spec-tag">Pro liniové a dopravní stavby</p>
-        <h3>Inženýring přeložek VN/NN</h3>
-        <p>Kolize trasy s distribuční sítí zastaví celý proces výstavby. Zajistíme projekt i povolení přeložky, vyřešíme majetkoprávní agendu, věcná břemena (SoBS VB) i dočasná dopravní opatření (DIO) a zastoupíme vás na kontrolních dnech — aby výstavba pokračovala podle harmonogramu a bez smluvních penále.</p>
+        <p class="spec-tag">For linear and transport structures</p>
+        <h3>MV/LV line relocation engineering</h3>
+        <p>A clash between the route and the distribution network stops the entire construction process. We secure the design and the relocation permit, handle the property-law agenda, easements (SoBS VB — future easement agreements) and temporary traffic measures (DIO), and represent you at site inspection days — so construction continues on schedule and without contractual penalties.</p>
       </div>
       <div class="spec">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg></div>
-        <p class="spec-tag">Pro komerční a průmyslové areály</p>
-        <h3>Zajištění kapacit VN</h3>
-        <p>Areál potřebuje vyšší příkon, který u distributora není volně k dispozici. Navrhneme řešení napájení včetně integrace baterií pro peak-shaving (vykrývání odběrových špiček) a chytrých trafostanic (smart grids), vyjednáme rezervovaný příkon a optimalizujeme vaše vícenáklady na připojení.</p>
+        <p class="spec-tag">For commercial and industrial sites</p>
+        <h3>Securing MV capacity</h3>
+        <p>A site needs a higher reserved capacity that isn't freely available from the distributor. We design the power supply solution — including battery integration for peak shaving and smart substations (smart grids) — negotiate the reserved capacity and optimise your additional connection costs.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- O FIRMĚ / MANIFEST -->
-<section class="manifest" id="ofirme">
+<!-- WHY US / MANIFEST -->
+<section class="manifest" id="why">
   <div class="wrap block" style="padding-top:130px;padding-bottom:130px">
     <div>
-      <div class="kicker">Proč s námi</div>
-      <h2>Vaši zakázku nevede junior.</h2>
-      <p>Ve velkých projekčních kancelářích zakázku často převezme méně zkušený projektant a projekt se stává jednou z mnoha položek ve frontě. U nás máte jistotu opaku — pracujeme cíleně a v omezeném počtu zakázek.</p>
-      <p>Jako dlouholetý smluvní partner ČEZ Distribuce známe schvalovací procesy zevnitř. Zatímco ostatní řeší dotazy přes infolinku, my víme, na koho se obrátit napřímo.</p>
+      <div class="kicker">Why us</div>
+      <h2>Your project isn't run by a junior.</h2>
+      <p>In large design offices, your project is often taken over by a less experienced engineer and becomes just one item in a long queue. With us you get the opposite — we work in a focused way and on a strictly limited number of projects.</p>
+      <p>As a long-standing contractual partner of ČEZ Distribuce, we know the approval processes from the inside. While others handle their queries through a call centre, we know exactly whom to contact directly.</p>
     </div>
     <div>
       <ul class="vlist">
-        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Vše nese razítko autorizovaného inženýra (obor IT00)</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Know-how zevnitř: 8 let přímé spolupráce s ČEZ Distribuce, a.s.</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Reference z liniových staveb — od přeložek pro ŘSD po rekonstrukce sítí celých obcí</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Backoffice, který za vás kompletně převezme komunikaci s úřady i portály PDS</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Certifikovaný fotovoltaický expert — osvědčení České fotovoltaické asociace (ČFA)</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Everything carries the stamp of an authorised engineer (field IT00)</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Inside know-how: 8 years of direct cooperation with ČEZ Distribuce, a.s.</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> References from linear projects — from relocations for the Road &amp; Motorway Directorate (ŘSD) to network reconstructions of entire municipalities</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> A back office that fully takes over communication with authorities and distributor (DSO) portals on your behalf</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Certified photovoltaic expert — accredited by the Czech Photovoltaic Association (ČFA)</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PROCES -->
-<section class="block" id="proces">
+<!-- PROCESS -->
+<section class="block" id="process">
   <div class="wrap">
-    <div class="kicker">Jak spolupracujeme</div>
-    <h2 class="sec-title">Postup, který nezdržuje vaši investici</h2>
+    <div class="kicker">How we work</div>
+    <h2 class="sec-title">A process that doesn't delay your investment</h2>
     <div class="steps">
       <div class="pstep active">
         <div class="n">01 — AUDIT</div>
-        <h3>Strategický audit</h3>
-        <p>Rychle posoudíme zadání a identifikujeme kritické místo. Jasně sdělíme, co je řešitelné a jakou cestou.</p>
+        <h3>Strategic audit</h3>
+        <p>We quickly assess the brief and identify the critical bottleneck. We clearly tell you what is solvable and which way.</p>
       </div>
       <div class="pstep active">
-        <div class="n">02 — INŽENÝRING</div>
-        <h3>Expertní inženýring a legislativa</h3>
-        <p>Přebíráme kompletní agendu. Zajišťujeme jednání s úřady i distributorem, vy se soustředíte na realizaci.</p>
+        <div class="n">02 — ENGINEERING</div>
+        <h3>Expert engineering &amp; regulation</h3>
+        <p>We take over the entire agenda. We handle negotiations with authorities and the distributor while you focus on construction.</p>
       </div>
       <div class="pstep active">
-        <div class="n">03 — VÝSLEDEK</div>
-        <h3>Garantovaný výsledek</h3>
-        <p>Razítko, ÚTP, povolení přeložky, smlouva o připojení — kompletně zajištěno.</p>
+        <div class="n">03 — RESULT</div>
+        <h3>Guaranteed result</h3>
+        <p>Stamp, UTP (permit for permanent operation), relocation permit, connection agreement — fully secured.</p>
       </div>
     </div>
   </div>
@@ -333,57 +318,57 @@
 <!-- FAQ -->
 <section class="block faq" id="faq">
   <div class="wrap">
-    <div class="kicker">Časté dotazy</div>
-    <h2 class="sec-title">Na co se investoři nejčastěji ptají</h2>
+    <div class="kicker">FAQ</div>
+    <h2 class="sec-title">What investors ask most often</h2>
     <div class="faq-list">
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          <span>Jak probíhá inženýring a povolování přeložek VN/NN u liniových staveb?</span>
+          <span>How does the engineering and permitting of MV/LV line relocations for linear structures work?</span>
           <span class="faq-ic" aria-hidden="true"></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          Naše služba pokrývá celý životní cyklus přeložek: od zajištění prvotního vyjádření o existenci sítí, přes technický návrh nového trasování, až po vyřízení dočasných dopravních opatření (DIO) a koordinaci s PDS. Klíčovou přidanou hodnotou je náš administrativní backoffice, který hromadně a v zákonných lhůtách procesuje majetkoprávní agendu a zřizování Smluv o smlouvách budoucích o zřízení věcného břemene (SoBS VB) s dotčenými vlastníky pozemků, čímž eliminujeme riziko zdržení stavby.
+          Our service covers the entire life cycle of a relocation: from securing the initial statement on the existence of networks, through the technical design of the new routing, to arranging temporary traffic measures (DIO) and coordinating with the distribution system operator (DSO). The key added value is our administrative back office, which processes the property-law agenda in bulk and within statutory deadlines, including the establishment of future easement agreements (SoBS VB) with the affected landowners — eliminating the risk of construction delays.
         </div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          <span>Co je potřeba pro úspěšný grid-connection velkokapacitních FVE a bateriových úložišť (BESS)?</span>
+          <span>What does a successful grid connection of large-capacity PV plants and battery storage systems (BESS) require?</span>
           <span class="faq-ic" aria-hidden="true"></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          Připojování výroben a akumulace nad 100 kW podléhá přísným Pravidlům provozování distribučních soustav (PPDS) a legislativě Lex OZE III. Jako experti s autorizací IT00 přebíráme kompletní odpovědnost za proces s provozovateli soustav (ČEZ, EG.D, PRE). Navrhneme normativně správná jednopólová schémata a zajistíme splnění technických požadavků včetně integrace vzdálené terminálové jednotky (RTU). Následně klienta bezpečně provedeme fází UPOS (zkušební provoz pro ověření souladu) až k získání finálního UTP (umožnění trvalého provozu).
+          Connecting generation and storage above 100 kW is subject to the strict Distribution System Operating Rules (PPDS) and the Lex OZE III legislation. As experts holding the IT00 authorisation, we take full responsibility for the process with the system operators (ČEZ, EG.D, PRE). We design compliant single-line diagrams and ensure the technical requirements are met, including integration of the remote terminal unit (RTU). We then safely guide the client through the UPOS phase (trial operation for compliance verification) all the way to the final UTP (permit for permanent operation).
         </div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          <span>Jak řešíte nedostatek distribuční kapacity a rezervovaného příkonu pro průmyslové areály?</span>
+          <span>How do you address a shortage of distribution capacity and reserved capacity for industrial sites?</span>
           <span class="faq-ic" aria-hidden="true"></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          Pokud lokální distributor zamítne žádost o navýšení příkonu z důvodu vyčerpání kapacity transformátoru, realizujeme technicko-legislativní audit odběrného místa. Nezaměřujeme se na budování drahých nových vedení, ale na integraci technologií Smart Grids a instalaci kompaktních rozváděčů (např. ABB SafeRing). Navrhujeme technická řešení omezující nechtěné přetoky do sítě a implementujeme systémy pro vyhlazování odběrových špiček (takzvaný peak shaving) za využití bateriových bufferů. Na základě těchto dat vyjednáme s distributorem zcela nové, ekonomicky optimální připojovací podmínky.
+          If the local distributor rejects a request to increase capacity because the transformer is exhausted, we carry out a technical-regulatory audit of the connection point. Rather than building expensive new lines, we focus on integrating Smart Grid technologies and installing compact switchgear (e.g. ABB SafeRing). We design technical solutions that limit unwanted reverse flows into the grid and implement peak-shaving systems using battery buffers. Based on this data, we negotiate entirely new, economically optimal connection terms with the distributor.
         </div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          <span>V čem spočívá výhoda butikového inženýrského modelu oproti velkým projekčním kancelářím?</span>
+          <span>What is the advantage of the boutique engineering model over large design offices?</span>
           <span class="faq-ic" aria-hidden="true"></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          Ve velkých korporátních projekčních kancelářích vaše zakázka často propadne k méně zkušeným juniorům a stane se jen položkou v dlouhém harmonogramu. V našem inženýrském butiku držíme striktní limit na počet souběžně zpracovávaných projektů. Každé technické řešení, výpočet i výkres osobně zpracovává a zaštiťuje autorizovaný inženýr v oboru Technologická zařízení staveb (IT00) s historií stovek úspěšně obhájených investičních akcí. Klient tak komunikuje přímo s tím, kdo na projektu reálně pracuje.
+          In large corporate design offices, your project often ends up with less experienced juniors and becomes just an item in a long schedule. In our engineering boutique we keep a strict limit on the number of projects handled simultaneously. Every technical solution, calculation and drawing is personally prepared and guaranteed by an authorised engineer in the field of Technological Equipment of Buildings (IT00), with a track record of hundreds of successfully defended investment projects. The client therefore communicates directly with the person who actually works on the project.
         </div></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          <span>Jak dokážete urychlit komunikaci s úřady a provozovateli distribučních soustav (PDS)?</span>
+          <span>How do you speed up communication with authorities and distribution system operators (DSOs)?</span>
           <span class="faq-ic" aria-hidden="true"></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          Naše rychlost vychází z jasného rozdělení rolí v týmu a z dlouholeté zkušenosti. Od roku 2018 působíme jako přímý dodavatel společnosti ČEZ Distribuce, a.s., díky čemuž do detailu známe interní metodiky, schvalovací procedury i rozhodovací procesy velkých distributorů zevnitř. Zároveň disponujeme seniorní administrativní podporou, která kompletně přebírá byrokratickou agendu. Zatímco inženýr řeší ryze expertní uzly, backoffice se denně pohybuje v distribučních portálech, na stavebních úřadech a v katastru nemovitostí, což zkracuje procesy až o desítky procent.
+          Our speed comes from a clear division of roles within the team and from many years of experience. Since 2018 we have acted as a direct supplier to ČEZ Distribuce, a.s., which means we know the internal methodologies, approval procedures and decision-making processes of the large distributors from the inside. We also have senior administrative support that fully absorbs the bureaucratic agenda. While the engineer handles the purely expert tasks, the back office works daily in distribution portals, at building authorities and in the land registry — shortening processes by as much as tens of percent.
         </div></div>
       </div>
 
@@ -391,37 +376,36 @@
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section class="block contact" id="kontakt" style="padding-top:0">
+<!-- CONTACT -->
+<section class="block contact" id="contact" style="padding-top:0">
   <div class="wrap">
-    <!-- PORTRÉT: ulož fotku jako portret.jpg do stejné složky. Pro černobílou přidej class "mono": class="avatar mono" -->
-    <img src="portret.jpg" class="avatar" alt="Ing. Tomáš Prachař">
-    <h2>Brzdí komplikace s připojením váš investiční záměr?</h2>
-    <p>Zdržuje se připojení vašeho bateriového úložiště u distributora? Potřebujete navýšit kapacitu VN pro váš areál? Spojme se.</p>
-    <a href="mailto:prachar@tcpr.cz?subject=Poptávka%20—%20TecPro%20design" class="btn">Napsat e-mail →</a>
+    <img src="https://tcpr.cz/portret.jpg" class="avatar" alt="Ing. Tomáš Prachař">
+    <h2>Are connection complications holding back your investment?</h2>
+    <p>Is the grid connection of your battery storage system delayed at the distributor? Do you need to increase the MV capacity for your site? Let's talk.</p>
+    <a href="mailto:prachar@tcpr.cz?subject=Enquiry%20—%20TecPro%20design" class="btn">Send an e-mail →</a>
     <div class="cdetails">
       <div class="it"><div class="k">E-mail</div><div class="v">prachar@tcpr.cz</div></div>
-      <div class="it"><div class="k">Telefon</div><div class="v">+420 724 676 802</div></div>
-      <div class="it"><div class="k">Jednatel</div><div class="v">Ing. Tomáš Prachař</div></div>
-      <div class="it"><div class="k">Autorizace</div><div class="v">ČKAIT 0202413 · obor IT00</div></div>
-      <div class="it"><div class="k">Sídlo</div><div class="v">Národní 58/32, Praha 1 — Nové Město, 110 00</div></div>
-      <div class="it"><div class="k">IČO</div><div class="v">06891179</div></div>
-      <div class="it"><div class="k">DIČ</div><div class="v">CZ06891179</div></div>
-      <div class="it"><div class="k">Datová schránka</div><div class="v">ua43zky</div></div>
+      <div class="it"><div class="k">Phone</div><div class="v">+420 724 676 802</div></div>
+      <div class="it"><div class="k">Managing director</div><div class="v">Ing. Tomáš Prachař</div></div>
+      <div class="it"><div class="k">Authorisation</div><div class="v">ČKAIT 0202413 · field IT00</div></div>
+      <div class="it"><div class="k">Registered office</div><div class="v">Národní 58/32, Prague 1 — Nové Město, 110 00</div></div>
+      <div class="it"><div class="k">Company ID</div><div class="v">06891179</div></div>
+      <div class="it"><div class="k">VAT ID</div><div class="v">CZ06891179</div></div>
+      <div class="it"><div class="k">Data box</div><div class="v">ua43zky</div></div>
     </div>
   </div>
 </section>
 
-<!-- PATIČKA -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap foot">
-    <div>© 2026 TecPro design s.r.o. — IČO 06891179 · DIČ CZ06891179 · Národní 58/32, Praha 1</div>
+    <div>© 2026 TecPro design s.r.o. — Company ID 06891179 · VAT CZ06891179 · Národní 58/32, Prague 1</div>
     <div>tcpr.cz</div>
   </div>
 </footer>
 
 <script>
-  // Animace počítadel — spustí se, až sekce naběhne na obrazovku.
+  // Counter animation — runs when the section scrolls into view.
   const nums = document.querySelectorAll('.num span[data-target]');
   const animate = (el) => {
     const target = +el.dataset.target;
@@ -439,8 +423,7 @@
   }, { threshold: 0.6 });
   nums.forEach(n => io.observe(n));
 
-  // Scroll-reveal — sekce jemně naběhnou při scrollování.
-  // Třídu .reveal přidává JS, takže bez JS zůstane vše normálně viditelné.
+  // Scroll-reveal — sections fade in on scroll.
   const reveals = document.querySelectorAll('.counters, section.block, .manifest');
   reveals.forEach(el => el.classList.add('reveal'));
   const ioReveal = new IntersectionObserver((entries) => {
@@ -448,14 +431,14 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => ioReveal.observe(el));
 
-  // Pohyblivé ambientní podbarvení — jemně se posouvá podle scrollu.
+  // Moving ambient glow — drifts gently with scroll.
   const ambient = document.querySelector('.ambient');
   if (ambient && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let ticking = false;
     const moveAmbient = () => {
       const y = window.scrollY;
-      const dx = Math.cos(y / 700) * 46;   // jemný horizontální drift
-      const dy = Math.sin(y / 520) * 70;   // jemný vertikální drift
+      const dx = Math.cos(y / 700) * 46;
+      const dy = Math.sin(y / 520) * 70;
       ambient.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
       ticking = false;
     };
@@ -465,7 +448,7 @@
     moveAmbient();
   }
 
-  // FAQ akordeon — rozbalení/sbalení odpovědi s animací.
+  // FAQ accordion — expand/collapse with animation.
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
@@ -475,7 +458,6 @@
       panel.style.maxHeight = open ? (panel.scrollHeight + 'px') : null;
     });
   });
-  // Po změně velikosti okna přepočítat výšku otevřených odpovědí.
   window.addEventListener('resize', () => {
     document.querySelectorAll('.faq-item.open .faq-a').forEach(p => {
       p.style.maxHeight = p.scrollHeight + 'px';
