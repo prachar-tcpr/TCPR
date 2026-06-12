@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TecPro design s.r.o. — Butikový inženýring energetické infrastruktury</title>
+<meta name="description" content="TecPro design s.r.o. — butikový inženýring energetické infrastruktury. Přeložky VN/NN, věcná břemena, grid-connection pro FVE a BESS, zajištění kapacit VN. Vše pod razítkem autorizovaného inženýra.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- ================================================================
+     JAK EDITOVAT (pro Tomáše):
+     - Text měníte jen MEZI značkami <...> a </...>.
+     - Barvy a písmo: nahoře v :root.
+     - Čísla v počítadlech: hledej data-target="..." a přepiš číslo.
+     - Logo: viz komentář "LOGO".
+================================================================= -->
+
+<style>
+  :root{
+    --bg:#0a0a0b;          /* hlavní pozadí (čistá černá jako vizitka) */
+    --bg-2:#0e0e10;
+    --panel:#141416;
+    --ink:#f2f3f5;          /* hlavní světlý text (bílá jako logo) */
+    --muted:#9a9ea6;        /* tlumený text */
+    --line:rgba(255,255,255,.08);
+    --accent:#e02626;       /* akcent — červená (změň zde celý web) */
+    --accent-soft:rgba(224,38,38,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;background:transparent;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.1}
+
+  /* HLAVIČKA */
+  header{position:sticky;top:0;z-index:60;background:rgba(11,13,16,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  /* LOGO: textové. Obrázek: <img src="logo.svg" alt="TecPro design" style="height:30px"> */
+  .logo{font-size:19px;font-weight:600;letter-spacing:.04em;display:inline-flex;align-items:baseline;gap:5px}
+  .logo b{font-weight:600}
+  .logo .sub{font-size:12px;font-weight:400;letter-spacing:.18em;color:var(--muted);text-transform:lowercase}
+  .menu{display:flex;gap:30px;font-size:14px;color:var(--muted)}
+  .menu a{transition:color .2s}
+  .menu a:hover{color:var(--ink)}
+  .nav-cta{border:1px solid var(--line);padding:9px 18px;border-radius:100px;font-size:14px;transition:border-color .2s,background .2s}
+  .nav-cta:hover{border-color:var(--accent);background:var(--accent-soft)}
+  @media(max-width:820px){.menu{display:none}}
+
+  /* HERO */
+  .hero{padding:130px 0 110px;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,var(--accent-soft),transparent 65%);pointer-events:none;z-index:1}
+  /* Blueprint mřížka na pozadí hero — technická: jemné linky + výraznější každá 5. (jako CAD) */
+  .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px),
+      linear-gradient(rgba(255,255,255,.12) 1.3px,transparent 1.3px),
+      linear-gradient(90deg,rgba(255,255,255,.12) 1.3px,transparent 1.3px);
+    background-size:30px 30px,30px 30px,150px 150px,150px 150px;
+    -webkit-mask-image:radial-gradient(ellipse 78% 68% at 50% 34%,#000 32%,transparent 80%);
+    mask-image:radial-gradient(ellipse 78% 68% at 50% 34%,#000 32%,transparent 80%)}
+  .hero .wrap{position:relative;z-index:2}
+  /* Elektrický puls — linka přes celou šířku se světelným bodem */
+  .pulse-line{position:absolute;left:0;bottom:54px;width:100%;height:1px;z-index:2;overflow:visible;pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(224,38,38,.22) 30%,rgba(224,38,38,.22) 70%,transparent)}
+  .pulse-line::after{content:"";position:absolute;top:50%;left:0;width:130px;height:2px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);box-shadow:0 0 12px var(--accent);
+    transform:translate(-130px,-50%);
+    animation:pulse 4s cubic-bezier(.16,.72,.28,1) .4s 1 forwards}
+  @keyframes pulse{
+    0%{transform:translate(-130px,-50%);opacity:0}
+    6%{opacity:1}
+    100%{transform:translate(calc(100vw - 150px),-50%);opacity:1}}
+  /* Pohyblivé ambientní podbarvení — reaguje na scrollování (JS) */
+  .ambient{position:fixed;left:50%;top:30%;width:1100px;height:780px;z-index:-1;pointer-events:none;
+    transform:translate(-50%,-50%);will-change:transform;
+    background:radial-gradient(ellipse at center,rgba(224,38,38,.13),transparent 62%);filter:blur(8px)}
+  /* Scroll-reveal — sekce jemně naběhnou */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .pulse-line::after{animation:none;transform:translate(calc(100vw - 150px),-50%);opacity:1}
+  }
+  .tagline{display:inline-flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:30px}
+  .tagline .pip{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .hero h1{font-size:clamp(40px,6vw,76px);font-weight:600;max-width:14ch;margin-bottom:28px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero .lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:54ch;margin-bottom:40px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:15px 28px;border-radius:100px;font-weight:600;font-size:15px;transition:transform .15s,filter .2s}
+  .btn:hover{filter:brightness(1.06);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--accent)}
+
+  /* POČÍTADLA */
+  .counters{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .counters .grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .counter{padding:58px 28px;border-right:1px solid var(--line)}
+  .counter:last-child{border-right:none}
+  .counter .num{font-size:clamp(34px,4vw,48px);font-weight:600;letter-spacing:-.03em;display:flex;align-items:baseline;gap:4px}
+  .counter .num .suf{color:var(--accent);font-size:.6em}
+  .counter .lbl{font-size:14px;color:var(--muted);margin-top:6px}
+  @media(max-width:820px){.counters .grid{grid-template-columns:1fr 1fr}.counter:nth-child(2){border-right:none}.counter{border-bottom:1px solid var(--line)}}
+
+  /* OBECNÁ SEKCE */
+  section.block{padding:150px 0}
+  .kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .sec-title{font-size:clamp(30px,4vw,46px);font-weight:600;max-width:18ch;margin-bottom:20px}
+  .sec-lead{color:var(--muted);font-size:18px;max-width:56ch}
+
+  /* SPECIALIZACE */
+  .spec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+  .spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .spec{background:var(--bg);padding:38px 32px;transition:background .25s}
+  .spec:hover{background:var(--panel)}
+  .spec .ic{width:44px;height:44px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+  .spec .ic svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.6}
+  .spec-tag{color:var(--accent)!important;font-size:12px!important;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+  .spec h3{font-size:20px;margin-bottom:12px}
+  .spec p{color:var(--muted);font-size:15px}
+  @media(max-width:880px){.spec-grid{grid-template-columns:1fr}}
+
+  /* O FIRMĚ / MANIFEST */
+  .manifest{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .manifest .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .manifest h2{font-size:clamp(26px,3vw,38px);font-weight:600;margin-bottom:22px}
+  .manifest p{color:var(--muted);font-size:17px;margin-bottom:16px}
+  .vlist{list-style:none;display:grid;gap:16px;margin-top:10px}
+  .vlist li{display:flex;gap:14px;align-items:flex-start;color:var(--ink);font-size:16px}
+  .vlist svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2;flex-shrink:0;margin-top:3px}
+  @media(max-width:880px){.manifest .wrap{grid-template-columns:1fr;gap:36px}}
+
+  /* PROCES */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+  .pstep{position:relative;padding-top:28px;border-top:2px solid var(--line)}
+  .pstep.active{border-top-color:var(--accent)}
+  .pstep .n{font-size:13px;letter-spacing:.1em;color:var(--accent);font-weight:600}
+  .pstep h3{font-size:20px;margin:12px 0 10px}
+  .pstep p{color:var(--muted);font-size:15px}
+  @media(max-width:880px){.steps{grid-template-columns:1fr}}
+
+  /* KONTAKT */
+  .contact .wrap{background:linear-gradient(160deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:24px;padding:64px 56px;text-align:center;position:relative;overflow:hidden}
+  .contact .wrap:before{content:"";position:absolute;bottom:-160px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,var(--accent-soft),transparent 65%)}
+  .contact .avatar{width:136px;height:136px;border-radius:50%;object-fit:cover;object-position:50% 28%;border:2px solid rgba(224,38,38,.35);box-shadow:0 0 0 7px rgba(224,38,38,.07);display:block;margin:0 auto 28px;position:relative;background:#1a1a1c}
+  .contact .avatar.mono{filter:grayscale(100%) contrast(1.04)}  /* monochrom: nech třídu "mono"; barevně ji smaž */
+  .contact h2{font-size:clamp(28px,4vw,44px);font-weight:600;margin-bottom:16px;position:relative}
+  .contact p{color:var(--muted);font-size:18px;max-width:48ch;margin:0 auto 32px;position:relative}
+  .cdetails{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-top:40px;position:relative}
+  .cdetails .it{text-align:left}
+  .cdetails .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .cdetails .v{font-size:17px;color:var(--ink)}
+
+  /* PATIČKA */
+  footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+
+<!-- HLAVIČKA -->
+<header>
+  <div class="wrap nav">
+    <a href="#" aria-label="TecPro design"><img src="logo-white.png" alt="TecPro design" style="height:26px;display:block"></a>
+    <nav class="menu">
+      <a href="#specializace">Expertíza</a>
+      <a href="#ofirme">Proč s námi</a>
+      <a href="#proces">Spolupráce</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="#kontakt" class="nav-cta">Nezávazná poptávka</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="tagline"><span class="pip"></span> Butikový inženýring energetické infrastruktury</span>
+    <h1>Odstraňujeme <em>technické a legislativní překážky</em> v energetice.</h1>
+    <p class="lead">Strategický inženýring pro vaše klíčové stavby a investice. Řešíme náročné přeložky VN/NN u liniových staveb a zajišťujeme grid-connection velkokapacitních zdrojů — fotovoltaických elektráren i bateriových úložišť (BESS). Váš investiční záměr dovedeme až k pravomocnému povolení, bez zbytečných zdržení a pod razítkem autorizovaného inženýra.</p>
+    <div class="hero-actions">
+      <a href="#kontakt" class="btn">Poptat řešení →</a>
+      <a href="#specializace" class="btn btn-ghost">Naše expertíza</a>
+    </div>
+  </div>
+  <div class="pulse-line" aria-hidden="true"></div>
+</section>
+
+<!-- POČÍTADLA — DOPLŇ REÁLNÁ ČÍSLA do data-target="..." -->
+<div class="counters">
+  <div class="wrap" style="padding:0">
+    <div class="grid">
+      <div class="counter"><div class="num"><span data-target="1000">0</span><span class="suf">+</span></div><div class="lbl">povolených staveb</div></div>
+      <div class="counter"><div class="num"><span data-target="6500">0</span><span class="suf">+</span></div><div class="lbl">zajištěných věcných břemen</div></div>
+      <div class="counter"><div class="num"><span data-target="100">0</span><span class="suf">%</span></div><div class="lbl">kompatibilita s distributory</div></div>
+      <div class="counter"><div class="num"><span data-target="8">0</span><span class="suf">let</span></div><div class="lbl">praxe (2018–2026)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SPECIALIZACE -->
+<section class="block" id="specializace">
+  <div class="wrap">
+    <div class="spec-head">
+      <div>
+        <div class="kicker">Tři pilíře naší expertízy</div>
+        <h2 class="sec-title">Řešíme překážky, které brzdí vaše investice</h2>
+      </div>
+      <p class="sec-lead">Naše činnost nekončí u projektové dokumentace. Přebíráme jednání s distributorem, vlastníky pozemků i dotčenými orgány a vedeme je až k pravomocnému povolení.</p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <p class="spec-tag">Pro developery FVE a BESS</p>
+        <h3>Grid-connection a schvalování</h3>
+        <p>Připojení velkokapacitního zdroje nebo bateriového úložiště se u distributora zpravidla zdržuje. Provedeme vás celým procesem — od studie připojitelnosti přes nastavení komunikace RTU s dispečinkem až po pravomocné získání UPOS (umožnění provozu pro ověření souladu) a UTP (umožnění trvalého provozu) pro systémy nad 100 kW. Vše v součinnosti s ČEZ Distribuce, EG.D nebo PRE.</p>
+      </div>
+      <div class="spec">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <p class="spec-tag">Pro liniové a dopravní stavby</p>
+        <h3>Inženýring přeložek VN/NN</h3>
+        <p>Kolize trasy s distribuční sítí zastaví celý proces výstavby. Zajistíme projekt i povolení přeložky, vyřešíme majetkoprávní agendu, věcná břemena (SoBS VB) i dočasná dopravní opatření (DIO) a zastoupíme vás na kontrolních dnech — aby výstavba pokračovala podle harmonogramu a bez smluvních penále.</p>
+      </div>
+      <div class="spec">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <p class="spec-tag">Pro komerční a průmyslové areály</p>
+        <h3>Zajištění kapacit VN</h3>
+        <p>Areál potřebuje vyšší příkon, který u distributora není volně k dispozici. Navrhneme řešení napájení včetně integrace baterií pro peak-shaving (vykrývání odběrových špiček) a chytrých trafostanic (smart grids), vyjednáme rezervovaný příkon a optimalizujeme vaše vícenáklady na připojení.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O FIRMĚ / MANIFEST -->
+<section class="manifest" id="ofirme">
+  <div class="wrap block" style="padding-top:130px;padding-bottom:130px">
+    <div>
+      <div class="kicker">Proč s námi</div>
+      <h2>Vaši zakázku nevede junior.</h2>
+      <p>Ve velkých projekčních kancelářích zakázku často převezme méně zkušený projektant a projekt se stává jednou z mnoha položek ve frontě. U nás máte jistotu opaku — pracujeme cíleně a v omezeném počtu zakázek.</p>
+      <p>Jako dlouholetý smluvní partner ČEZ Distribuce známe schvalovací procesy zevnitř. Zatímco ostatní řeší dotazy přes infolinku, my víme, na koho se obrátit napřímo.</p>
+    </div>
+    <div>
+      <ul class="vlist">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Vše nese razítko autorizovaného inženýra (obor IT00)</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Know-how zevnitř: 8 let přímé spolupráce s ČEZ Distribuce, a.s.</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Reference z liniových staveb — od přeložek pro ŘSD po rekonstrukce sítí celých obcí</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Backoffice, který za vás kompletně převezme komunikaci s úřady i portály PDS</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Certifikovaný fotovoltaický expert — osvědčení České fotovoltaické asociace (ČFA)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section class="block" id="proces">
+  <div class="wrap">
+    <div class="kicker">Jak spolupracujeme</div>
+    <h2 class="sec-title">Postup, který nezdržuje vaši investici</h2>
+    <div class="steps">
+      <div class="pstep active">
+        <div class="n">01 — AUDIT</div>
+        <h3>Strategický audit</h3>
+        <p>Rychle posoudíme zadání a identifikujeme kritické místo. Jasně sdělíme, co je řešitelné a jakou cestou.</p>
+      </div>
+      <div class="pstep active">
+        <div class="n">02 — INŽENÝRING</div>
+        <h3>Expertní inženýring a legislativa</h3>
+        <p>Přebíráme kompletní agendu. Zajišťujeme jednání s úřady i distributorem, vy se soustředíte na realizaci.</p>
+      </div>
+      <div class="pstep active">
+        <div class="n">03 — VÝSLEDEK</div>
+        <h3>Garantovaný výsledek</h3>
+        <p>Razítko, ÚTP, povolení přeložky, smlouva o připojení — kompletně zajištěno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="block contact" id="kontakt" style="padding-top:0">
+  <div class="wrap">
+    <!-- PORTRÉT: ulož fotku jako portret.jpg do stejné složky. Pro černobílou přidej class "mono": class="avatar mono" -->
+    <img src="portret.jpg" class="avatar" alt="Ing. Tomáš Prachař">
+    <h2>Brzdí komplikace s připojením váš investiční záměr?</h2>
+    <p>Zdržuje se připojení vašeho bateriového úložiště u distributora? Potřebujete navýšit kapacitu VN pro váš areál? Spojme se.</p>
+    <a href="mailto:prachar@tcpr.cz?subject=Poptávka%20—%20TecPro%20design" class="btn">Napsat e-mail →</a>
+    <div class="cdetails">
+      <div class="it"><div class="k">E-mail</div><div class="v">prachar@tcpr.cz</div></div>
+      <div class="it"><div class="k">Telefon</div><div class="v">+420 724 676 802</div></div>
+      <div class="it"><div class="k">Jednatel</div><div class="v">Ing. Tomáš Prachař</div></div>
+      <div class="it"><div class="k">Autorizace</div><div class="v">ČKAIT 0202413 · obor IT00</div></div>
+      <div class="it"><div class="k">Sídlo</div><div class="v">Národní 58/32, Praha 1 — Nové Město, 110 00</div></div>
+      <div class="it"><div class="k">IČO</div><div class="v">06891179</div></div>
+      <div class="it"><div class="k">DIČ</div><div class="v">CZ06891179</div></div>
+      <div class="it"><div class="k">Datová schránka</div><div class="v">ua43zky</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PATIČKA -->
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 TecPro design s.r.o. — IČO 06891179 · DIČ CZ06891179 · Národní 58/32, Praha 1</div>
+    <div>tcpr.cz</div>
+  </div>
+</footer>
+
+<script>
+  // Animace počítadel — spustí se, až sekce naběhne na obrazovku.
+  const nums = document.querySelectorAll('.num span[data-target]');
+  const animate = (el) => {
+    const target = +el.dataset.target;
+    const dur = 1400, start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  nums.forEach(n => io.observe(n));
+
+  // Scroll-reveal — sekce jemně naběhnou při scrollování.
+  // Třídu .reveal přidává JS, takže bez JS zůstane vše normálně viditelné.
+  const reveals = document.querySelectorAll('.counters, section.block, .manifest');
+  reveals.forEach(el => el.classList.add('reveal'));
+  const ioReveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ioReveal.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => ioReveal.observe(el));
+
+  // Pohyblivé ambientní podbarvení — jemně se posouvá podle scrollu.
+  const ambient = document.querySelector('.ambient');
+  if (ambient && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    const moveAmbient = () => {
+      const y = window.scrollY;
+      const dx = Math.cos(y / 700) * 46;   // jemný horizontální drift
+      const dy = Math.sin(y / 520) * 70;   // jemný vertikální drift
+      ambient.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(moveAmbient); ticking = true; }
+    }, { passive: true });
+    moveAmbient();
+  }
+</script>
+
+</body>
+</html>
