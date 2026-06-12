@@ -9,6 +9,14 @@
 <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Náhled při sdílení odkazu (WhatsApp, sociální sítě) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="TecPro design s.r.o. — Butikový inženýring energetické infrastruktury">
+<meta property="og:description" content="Odstraňujeme technické a legislativní překážky v energetice. Přeložky VN/NN, grid-connection pro FVE a BESS, zajištění kapacit VN.">
+<meta property="og:url" content="https://tcpr.cz/">
+<meta property="og:image" content="https://tcpr.cz/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tcpr.cz/og-image.png">
 
 <!-- ================================================================
      JAK EDITOVAT (pro Tomáše):
@@ -144,6 +152,21 @@
   .pstep p{color:var(--muted);font-size:15px}
   @media(max-width:880px){.steps{grid-template-columns:1fr}}
 
+  /* FAQ — rozklikávací akordeon */
+  .faq-list{max-width:920px;margin:56px auto 0;border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    background:none;border:0;cursor:pointer;text-align:left;color:var(--ink);
+    font-family:inherit;font-size:clamp(16px,2vw,19px);font-weight:600;padding:28px 4px;transition:color .2s}
+  .faq-q:hover{color:var(--accent)}
+  .faq-ic{position:relative;width:18px;height:18px;flex:0 0 18px}
+  .faq-ic::before,.faq-ic::after{content:"";position:absolute;background:var(--accent);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+  .faq-ic::before{left:0;top:8px;width:18px;height:2px}
+  .faq-ic::after{left:8px;top:0;width:2px;height:18px}
+  .faq-item.open .faq-ic::after{transform:rotate(90deg);opacity:0}
+  .faq-a{overflow:hidden;max-height:0;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+  .faq-a-inner{padding:0 4px 28px;color:var(--muted);font-size:16px;max-width:80ch}
+
   /* KONTAKT */
   .contact .wrap{background:linear-gradient(160deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:24px;padding:64px 56px;text-align:center;position:relative;overflow:hidden}
   .contact .wrap:before{content:"";position:absolute;bottom:-160px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,var(--accent-soft),transparent 65%)}
@@ -155,6 +178,12 @@
   .cdetails .it{text-align:left}
   .cdetails .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
   .cdetails .v{font-size:17px;color:var(--ink)}
+  /* Mobil: kontakty na střed + užší okraje karty */
+  @media(max-width:600px){
+    .cdetails{gap:24px}
+    .cdetails .it{text-align:center;width:100%}
+    .contact .wrap{padding:48px 24px}
+  }
 
   /* PATIČKA */
   footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
@@ -172,6 +201,7 @@
       <a href="#specializace">Expertíza</a>
       <a href="#ofirme">Proč s námi</a>
       <a href="#proces">Spolupráce</a>
+      <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <a href="#kontakt" class="nav-cta">Nezávazná poptávka</a>
@@ -283,6 +313,67 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="block faq" id="faq">
+  <div class="wrap">
+    <div class="kicker">Časté dotazy</div>
+    <h2 class="sec-title">Na co se investoři nejčastěji ptají</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Jak probíhá inženýring a povolování přeložek VN/NN u liniových staveb?</span>
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Naše služba pokrývá celý životní cyklus přeložek: od zajištění prvotního vyjádření o existenci sítí, přes technický návrh nového trasování, až po vyřízení dočasných dopravních opatření (DIO) a koordinaci s PDS. Klíčovou přidanou hodnotou je náš administrativní backoffice, který hromadně a v zákonných lhůtách procesuje majetkoprávní agendu a zřizování Smluv o smlouvách budoucích o zřízení věcného břemene (SoBS VB) s dotčenými vlastníky pozemků, čímž eliminujeme riziko zdržení stavby.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Co je potřeba pro úspěšný grid-connection velkokapacitních FVE a bateriových úložišť (BESS)?</span>
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Připojování výroben a akumulace nad 100 kW podléhá přísným Pravidlům provozování distribučních soustav (PPDS) a legislativě Lex OZE III. Jako experti s autorizací IT00 přebíráme kompletní odpovědnost za proces s provozovateli soustav (ČEZ, EG.D, PRE). Navrhneme normativně správná jednopólová schémata a zajistíme splnění technických požadavků včetně integrace vzdálené terminálové jednotky (RTU). Následně klienta bezpečně provedeme fází UPOS (zkušební provoz pro ověření souladu) až k získání finálního UTP (umožnění trvalého provozu).
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Jak řešíte nedostatek distribuční kapacity a rezervovaného příkonu pro průmyslové areály?</span>
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Pokud lokální distributor zamítne žádost o navýšení příkonu z důvodu vyčerpání kapacity transformátoru, realizujeme technicko-legislativní audit odběrného místa. Nezaměřujeme se na budování drahých nových vedení, ale na integraci technologií Smart Grids a instalaci kompaktních rozváděčů (např. ABB SafeRing). Navrhujeme technická řešení omezující nechtěné přetoky do sítě a implementujeme systémy pro vyhlazování odběrových špiček (takzvaný peak shaving) za využití bateriových bufferů. Na základě těchto dat vyjednáme s distributorem zcela nové, ekonomicky optimální připojovací podmínky.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>V čem spočívá výhoda butikového inženýrského modelu oproti velkým projekčním kancelářím?</span>
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Ve velkých korporátních projekčních kancelářích vaše zakázka často propadne k méně zkušeným juniorům a stane se jen položkou v dlouhém harmonogramu. V našem inženýrském butiku držíme striktní limit na počet souběžně zpracovávaných projektů. Každé technické řešení, výpočet i výkres osobně zpracovává a zaštiťuje autorizovaný inženýr v oboru Technologická zařízení staveb (IT00) s historií stovek úspěšně obhájených investičních akcí. Klient tak komunikuje přímo s tím, kdo na projektu reálně pracuje.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Jak dokážete urychlit komunikaci s úřady a provozovateli distribučních soustav (PDS)?</span>
+          <span class="faq-ic" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Naše rychlost vychází z jasného rozdělení rolí v týmu a z dlouholeté zkušenosti. Od roku 2018 působíme jako přímý dodavatel společnosti ČEZ Distribuce, a.s., díky čemuž do detailu známe interní metodiky, schvalovací procedury i rozhodovací procesy velkých distributorů zevnitř. Zároveň disponujeme seniorní administrativní podporou, která kompletně přebírá byrokratickou agendu. Zatímco inženýr řeší ryze expertní uzly, backoffice se denně pohybuje v distribučních portálech, na stavebních úřadech a v katastru nemovitostí, což zkracuje procesy až o desítky procent.
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- KONTAKT -->
 <section class="block contact" id="kontakt" style="padding-top:0">
   <div class="wrap">
@@ -356,6 +447,23 @@
     }, { passive: true });
     moveAmbient();
   }
+
+  // FAQ akordeon — rozbalení/sbalení odpovědi s animací.
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const panel = item.querySelector('.faq-a');
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.style.maxHeight = open ? (panel.scrollHeight + 'px') : null;
+    });
+  });
+  // Po změně velikosti okna přepočítat výšku otevřených odpovědí.
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.faq-item.open .faq-a').forEach(p => {
+      p.style.maxHeight = p.scrollHeight + 'px';
+    });
+  });
 </script>
 
 </body>
